@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+</head>
+<body>
+
+<div th:insert="header.html"/>
+<center>
+<form style="margin-top: 50px" action="/upload" method="post" enctype="multipart/form-data">
+
+    Select Image: <input type="file" name="file"> <br>
+    <input type="submit" class="btn btn-dark" value="Upload">
+
+</form>
+
+        <STRONG><span class="alert alert-success" th:text="${msg}"></span> </STRONG>
+
+</center>
+</body>
+</html>

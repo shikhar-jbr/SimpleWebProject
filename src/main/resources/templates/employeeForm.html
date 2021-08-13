@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!--    &lt;!&ndash; Latest compiled and minified CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+
+<!--    &lt;!&ndash; jQuery library &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+
+<!--    &lt;!&ndash; Popper JS &ndash;&gt;-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+
+<!--    &lt;!&ndash; Latest compiled JavaScript &ndash;&gt;-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+</head>
+<body>
+
+<div th:insert="header.html"></div>
+
+<h1 align="center">Employee Form</h1>
+<hr>
+<center>
+<form style="font-family: 'Times New Roman'; text-align: left; text" action="/employee" method="post" th:object="${emodel}">
+    <pre>
+
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="fname">First Name:</label>-->
+        First Name: <input align="center" type="text" th:field="*{fname}" size="40" placeholder="Enter Firstname"  id="fname"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="lname">Last Name:</label>-->
+        Last Name:  <input type="text" th:field="*{lname}" size="40" placeholder="Enter Lastname" id="lname"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="gender">Gender:</label>-->
+        Gender:     <input type="radio" th:field="*{gender}" value="Male" id="male"> Male  <input type="radio" th:field="*{gender}" value="Female" id="female">Female <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="company">Company:</label>-->
+        Company:    <input type="text" th:field="*{company}" size="40" placeholder="Enter Company" id="company"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="post">Post:</label>-->
+        Post:       <input type="text" th:field="*{post}" size="40" placeholder="Enter Post" id="post"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="phone">Phone:</label>-->
+        Phone:      <input type="text" th:field="*{phone}"  placeholder="Enter Phone" id="phone"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="email">Email address:</label>-->
+        Email:      <input type="email" th:field="*{email}" size="40" placeholder="Enter email" id="email"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="dob">DOB:</label>-->
+        DOB:        <input type="date" th:field="*{dob}" size="40" placeholder="Enter DOB" id="dob"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="joindate">Join Date:</label>-->
+        Join Date:  <input type="date" th:field="*{joindate}" size="40" placeholder="Enter Join Date" id="joindate"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="country">Country:</label>-->
+        Country:    <input type="text" th:field="*{address.country}" size="40" placeholder="Enter Country" id="country"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="city">City:</label>-->
+        City:       <input type="text" th:field="*{address.city}" size="40" placeholder="Enter City" id="city"> <br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="state">State:</label>&ndash;&gt;-->
+       State:       <select  th:field="*{address.state}" id="state">
+        <option value="">---------Select State---------</option>
+        <option value="state-1">State 1</option>
+        <option value="state-2">State 2</option>
+        <option value="state-3">State 3</option>
+        <option value="state-4">State 4</option>
+        <option value="state-5">State 5</option>
+        <option value="state-6">State 6</option>
+        <option value="state-7">State 7</option>
+       </select><br>
+    <!-- </div> -->
+   <!-- <div class="form-group col-sm-5"> -->
+<!--        <label for="zipcode">Zip Code:</label>-->
+        ZipCode:    <input type="text" th:field="*{address.zipcode}" size="40" placeholder="Enter Zipcode" id="zipcode"> <br>
+    <!-- </div> -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    </pre>
+</form>
+
+</center>
+</body>
+</html>

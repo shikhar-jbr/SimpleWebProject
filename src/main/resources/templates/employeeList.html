@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+<div th:insert="header.html"></div>
+<table id="employeeTable" class="table table-striped">
+    <thead>
+    <tr class="success">
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Company</td>
+        <td>Phone</td>
+        <td>City</td>
+        <td>State</td>
+        <td>Email</td>
+        <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="emp: ${elist}" class="danger">
+        <td th:text="${emp.fname}"></td>
+        <td th:text="${emp.lname}"></td>
+        <td th:text="${emp.company}"></td>
+        <td th:text="${emp.phone}"></td>
+        <td th:text="${emp.address.city}"></td>
+        <td th:text="${emp.address.state}"></td>
+        <td th:text="${emp.email}"></td>
+        <td>
+           <a th:href="@{'/edit/'+${emp.id}}"> <input type="submit" class="btn btn-success" value="Edit"> </a>
+           <a th:href="@{'/delete/'+${emp.id}}"> <input type="submit" class="btn btn-danger" value="Delete"> </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#employeeTable').DataTable();
+    } );
+</script>
+</body>
+</html>
